@@ -40,4 +40,14 @@ public class MyServiceImpl implements MyService {
 		return demoList;
 	}
 
+	@Override
+	public void delelebyId(int id) throws Exception {
+		String query = "delete from demo where id = '"+id+"'";
+		Connection con = MyDBConnection.getMydbConnection();
+		Statement stmt = con.createStatement();
+		int resultSet = stmt.executeUpdate(query);
+		System.out.println("delete successfully..");
+		
+	}
+
 }
